@@ -1,0 +1,146 @@
+
+
+        <section class="container hidden spacing" id="content" view="Finaliza">
+ 
+            <article class="col" id="finalizar">
+                <h1 class="nomargin">Finalizar pedido</h1>
+                <p>Informe mais alguns dados para finalizar seu pedido</p> 
+                <div class="row">
+                   
+                           
+                              <div class="col col-md-6" container="address-user-finaliza">
+                                    <h3><i class="icon flaticon-split4"></i> Selecione o Canal</h4>
+                                    <p></p>
+                                    <ul class="address clearfix">
+                                        <li action="set-togo">
+                                            <img width="90" height="auto" src="App/views/public/images/logo-black.png"/>
+                                            <p>Quero buscar na loja</p>
+                                        </li>
+                                        <li action="set-address">
+                                            <i class="flaticon-man459"></i>
+                                            <p>Quero receber por entrega</p>
+                                        </li>
+                                    </ul>
+                                    
+                                    <span data-container="LojasToGo" class="hide">     
+                                                
+                                            <h3><i class="icon flaticon-map103"></i> Lojas</h3>
+                                            <p></p>
+                                            <ul class="address clearfix" list="lojas-togo"> </ul>
+                                     </span>
+                                                    
+                                    <span data-container="AddressFinaliza" class="hide">     
+                                    
+                                            <h3><i class="icon flaticon-map103"></i> Endereços Cadastrados</h3>
+                                            <p></p>
+                                            <ul class="address clearfix" action="add-address">
+                                                <li action="new-cadastro">
+                                                    <i class="flaticon-round57"></i>
+                                                    <p>Adicionar</p>
+                                                </li>
+                                                <span list="address-usuario" class="address-user-finaliza"></span>
+                                                
+                                            </ul>
+                                            <p><br><br></p>
+                                   
+                                    
+                                 
+                                      
+                                       <span data-container="Address" class="hidden">                    
+
+                                        <form  submit="address-finaliza" class="hide" autocomplete="off">
+                                             
+                                                <article class="boxcenter alert alert-warning"> <i class="flaticon-map103"></i></article>
+                                                <p><input type="text" name="apelido-address" placeholder="Apelido do endereço (Ex: casa, apartamento)" required="required"/><span class="required">*</span></p>
+                                                <p><input type="text"  disabled="disabled"  name="cep-address" placeholder="CEP" mask="CEP" required="required"/><span class="required">*</span></p>
+                                                <p><input type="text" disabled="disabled" name="rua-address" placeholder="Rua" required="required"/><span class="required">*</span></p>
+                                                <p><input type="text" name="numero-address" placeholder="Número" required="required"/><span class="required">*</span></p>
+                                                <p><input type="text" name="complemento-address" placeholder="Complemento" /></p>
+                                                <p><input type="text" name="referencia-address" placeholder="Ponto de referência" /></p>
+                                                <p><input type="text" disabled="disabled" name="bairro-address" placeholder="Bairro" required="required"/><span class="required">*</span></p>
+                                                <p><input type="text" disabled="disabled" name="localidade-address" placeholder="Cidade" required="required"/><span class="required">*</span></p>
+                                                <p><input type="text" disabled="disabled" name="uf-address" placeholder="Estado" required="required"/><span class="required">*</span></p>
+                                                    <input type="hidden" name="ID">
+                                                    <p>(*) Campos obrigatórios</p>
+                                                <p class="text-right"><button  action="update-usuario">Alterar</button></p> 
+                                        </form>
+
+
+                                        <form  submit="create-address-finaliza" class="hide" autocomplete="off">
+
+                                                <article class="boxcenter alert alert-warning">
+                                                    <p>Preencha o formulário abaixo para adiconar um endereço</p>
+                                                </article>
+                                    
+                                                <p><input type="text" name="apelido-address" placeholder="Apelido do endereço (Ex: casa, apartamento)" required="required"/><span class="required">*</span></p>
+                                                <p><input type="text" name="cep-address" placeholder="CEP"  mask="CEP" required="required"/><span class="required">*</span></p>
+                                                <p><input type="text" name="rua-address" placeholder="Rua" required="required"/><span class="required">*</span></p>
+                                                <p><input type="text" name="numero-address" placeholder="Número" mask="NUMBER" required="required" /><span class="required">*</span></p>
+                                                <p><input type="text" name="complemento-address" placeholder="Complemento" /></p>
+                                                <p><input type="text" name="referencia-address" placeholder="Ponto de referência"/></p>
+                                                <p><input type="text" name="bairro-address" placeholder="Bairro" required="required"/><span class="required">*</span></p>
+                                                <p><input type="text" name="localidade-address" placeholder="Cidade" required="required"/><span class="required">*</span></p>
+                                                <p><input type="text" name="uf-address" placeholder="Estado" required="required"/><span class="required">*</span></p>
+                                                <p>(*) Campos obrigatórios</p>
+                                                <p class="text-right"><button  action="update-usuario">Adicionar</button></p> 
+                                      
+                                        </form>                                    
+                                    </span>
+                                    
+                                </div>
+                        
+
+
+
+                    <div class="col col-md-6">
+                        <p class="visible-xs"><br/><br/><br/></p>
+                        <h3><i class="icon flaticon-list89"></i> Resumo do pedido</h3>
+                        <div class="itens clearfix">
+
+                            <div list="produtos-finaliza"></div>
+
+                            <p data-box="cupom" class="hide alert alert-success">
+                                <i class="flaticon-tag71" style="font-size: 45px;"></i>
+                                <small style="padding-left: 14px; top: -14px; position: relative;">Código Validado</small>
+                                <small style="padding: 3px; top: -14px; position: relative;background: #3C763D;color: white;margin-left: 9px;" data-value="codigo-cupom">>GEJAHSD</small>
+                                <small class="valor-taxa-finaliza">Desconto <strong><small>R$</small> - <span class="no-border" data-value="desconto-cupom">0,00</span></strong></small>
+                            </p>
+
+                            <div id="cupom">
+                                <form action="voucher">
+                                      <h3><i class="flaticon-tag71"></i> Cupom de desconto?</h3>
+                                      <div>
+                                         <input class="" name="voucher" type="text" placeholder="Código do cupom" style="width: calc(100% - 90px)" required="required">
+                                         <button>Validar</button>
+                                    </div>
+                                </form>    
+                            </div>
+
+
+                            
+                            <div class="pull-left"><a href="#" target="Cardapio" action="view"><button><i class="flaticon-create3"></i> Continuar comprando</button></a></div>
+                            <h3 class="text-right valor-total-finaliza" style="margin-right: 0px;"></h3>
+                            <small class="text-right pull-right">TOTAL <small class="text-right valor-total-pedido-finaliza"></small></small>
+                        </div>
+
+
+
+                    <p><br><br></p>
+                    <h3><i class="icon flaticon-credit98"></i> Selecione sua forma de pagamento</h3>
+                            <div class="alert alert-warning alert-finaliza" role="alert">
+                                        <i class="icon flaticon-warning37"></i> Fique tranquilo, seu pedido será pago somente na entrega ou ao buscar na loja. 
+                            </div>
+                           
+                            
+                             <!-- LISTAGEM DE FORMAS DE PAGAMENTO -->
+                            <form  list="formas-ptgo"></form>
+                            
+                    </div>
+                </div>
+                
+            </article>
+            
+        </section>
+
+    
+    

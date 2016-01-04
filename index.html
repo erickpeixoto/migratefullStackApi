@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <meta http-equiv="content-language" content="pt-br"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title>Dídio Pizza</title>
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="App/views/public/font/oxygen/regular/stylesheet.css" rel="stylesheet">
+    <link href="App/views/public/font/oxygen/strong/stylesheet.css" rel="stylesheet">
+    <link href="App/views/public/font/oxygen/light/stylesheet.css" rel="stylesheet">
+
+    <!--<script src="cordova.js"></script>
+    <script src="js/index.js"></script>
+    <script type="text/javascript">
+        app.initialize()
+    </script>-->
+
+    <link href="App/views/public/css/flaticon/flaticon.css" rel="stylesheet">
+    <link href="App/views/public/css/main.css" rel="stylesheet">
+    <script src="bower_components/jquery/dist/jquery.js" onLoad=" _jquery = true"></script>
+    <script src="bower_components/jquery-ui/jquery-ui.js"></script> 
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDSychhANxJtKy8FOsVOl0OKfk2SQTwqCc"> </script>
+    
+
+    
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script>
+        var CONFIG;
+        var _jquery;
+        var _plugins; 
+        var _view;
+        var _model;
+        var _auth;
+    </script>
+</head>
+
+<body>
+    <!--<div id="viewchange"></div>-->
+    
+    <div id="alert">
+        <div class="container">
+            <div class="col col-md-4"></div>
+            <div class="col col-md-4">
+                <h3></h3>
+                <p class="body"></p>
+                <p><button class="alt action">Ação</button> <button class="alt exit">Fechar</button></p>
+            </div>
+            <div class="col col-md-4"></div>
+        </div>
+    </div>
+
+
+
+
+   <div id="product" class="" container="Plus-Product">
+        <div class="container product-container">
+            <div class="row title"> <!-- CLASSE ADICIONADA -->
+                <article class="col col-md-12">
+                    <h2><i id="exit" class="icon flaticon-close47 pull-right hidden-xs close"></i><i id="exit" class="icon flaticon-left217"></i> <span data-text="label-details"></span> 
+                    <span data-type="combo" class="hide" list="itens-combo"></span> 
+                     </h2>
+                </article>
+            </div>
+
+            <div class="row">
+                    <form class="col col-md-5" container="options-pizza" data-change="first-half">
+
+
+
+                                        <div class="row hide" id="promoimg" data-type="combo" data-container="combo-details">
+                                            <div data-combo="img" class="col col-md-12" style="background-image: url(/App/views/public/images/promocoes/promocao_artezanale.jpg)"></div>
+                                            <div class="col-md-12">
+                                                <h3 class="red" style="margin: auto 0px;"><span data-combo="descricao"></span> <span class="badge pull-right pointer">REGRAS</span></h3>
+                                                <p class="promodesc" data-combo="regras"></p>
+                                            </div>
+                                        </div>
+
+                 
+                                      <!--<div class="alert alert-warning hide" role="alert">
+                                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                 <strong>Atenção!</strong> Agora você deve escolher a outra metade da Pizza.
+                                        </div>-->   
+                                        <span class="hidden" data-container="massas">
+                                                <h3><i class="icon flaticon-tick7"></i> Qual a massa?</h3>
+                                                <div class="row sizes section">
+                                                    <div class="col-md-12"> 
+                                                        <div class="row" list="tipos"></div>
+                                                    </div>
+                                                </div>
+                                        </span>
+
+                                        <span class="hidden" data-container="tamanho">
+                                              <h3><i class="icon flaticon-tick7"></i> Qual o tamanho?</h3>
+                                                  <div class="row sizes section">
+                                                        <div class="col-md-12"> 
+                                                         <div class="row" list="tamanho-product"> </div> 
+                                                    </div>
+                                                </div>
+                                        </span>
+
+                                        <span class="hidden" data-container="fracao">
+                                             <h3><i class="icon flaticon-tick7"></i> Meia ou inteira?</h3>
+                                                <div class="row sizes section">
+                                                    <div class="col-md-12"> 
+                                                       
+                                                        <div class="row size-product"> 
+                                                            <div class="col-xs-6 half-size hidden" data-value="0.5">
+                                                                <small>Meia</small>
+                                                                <div class="col" style="opacity: 0.3; background-image: url(App/views/public/images/1-2.png)">
+                                                                    <input type="checkbox"/>
+                                                                </div> 
+                                                            </div>
+                                                            <div class="col-xs-6" data-value="1">
+                                                                <small>Inteira</small>
+                                                                <div class="col active" style="background-image: url(App/views/public/images/6.png)">
+                                                                    <input type="checkbox"/>
+                                                                </div> 
+                                                            </div>
+                                                        </div> 
+
+                                                    </div>
+                                                </div>
+                                        </span>
+
+
+
+                                    <span class="hidden" data-container="options">
+                                            <div class="row section">
+                                                <div class="col-md-12">
+                                                    <button class="alt" id="more" type="button">Mais opções</button>
+                                                </div>
+                                                <div id="morepanel">
+                                                    <!-- <div class="col-md-6"> 
+                                                        <h4>Adicionar?</h4>
+                                                        <span class="list" list="adicionais"></span>
+                                                    </div> -->
+                                                    <div class="col-md-6"> 
+                                                        <h4>Remover?</h4>
+                                                        <span class="list" list="retirados"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                    </span>
+                           </form>
+                    
+
+
+
+
+                <article class="col col-md-7 data-transform" data-change="second-half">
+
+                    <div class="pizzametade hide" role="alert">
+                        Escolha a segunda metade da sua pizza
+                    </div>  
+
+                            <ul class="products">
+                                        
+                                <div id="select" class="hide" data-type="combo">
+                                    <div class="col col-xs-3 text-left" data-action="prev-product-combo"> <i class="flaticon-left216 icon down"></i> </div>
+                                    <div class="col col-xs-6 text-center"> <span style="top: 15px;font-size: 18px;position: relative;font-weight: bold;">Escolha o sabor</span> </div>
+                                    <div class="col col-xs-3 text-right" data-action="next-product-combo"> <i class="flaticon-keyboard53 icon down"></i> </div>
+                                </div>
+                                <li class="product">
+                                    <div class="cover meia" recept="img-product">
+                                        <div  class="" style="background-image: url(App/views/public/images/produtos/pizzas_brasileira.jpg)"></div>
+                                        <div class="" style="background-image: url(App/views/public/images/produtos/pizzas_calabresa.jpg)">
+                                            <i class="flaticon-expand39 icon up"></i>
+                                            <i class="flaticon-expand38 icon down"></i>
+                                        </div>
+                                  
+                                    </div>
+                                    
+                                    <!--<h4 class="nomargin descricao-product"> </h4>     FOI PARA BAIXO      --> 
+                                </li>
+                                <div class="productinfo row">
+                                    <div class="col-xs-6" data-container="integer-display-product">
+
+                                        <h4 class="nomargin descricao-product">PIZZA ARTESANALE GRANDE CALABRESA</h4>
+                                        <p recept="desc-product">Um hambúrguer enorme, 3 deliciosas fatias de queijo, tomate, alface crocante, cebola e molho especial. Tudo isso com um acompanhamento e uma bebida por um preço especial.</p>
+                                        <div class="text-center">
+                                                <p class="nomargin" list="options-remove-product"></p>
+                                                <p class="nomargin" list="options-param-product"></p>
+                                                <span class="add"></span>
+                                                <span class="remove"></span>
+                                                <h3 style="margin-top: 0px;" class="hide" recept="value-product-final">R$ 0,00</h3>
+                                                <h3 style="margin-top: 0px;" recept="value-product">R$ 0,00</h3>
+                                        </div>
+                                    </div>
+                                   
+                                    <!-- USAR O TRECHO ABAIXO SOMENTE PARA MEIA PIZZA -->
+                                   
+                                     <div class="hide col-xs-6" data-container="half-display-product">                   
+                                            <i class="flaticon-add182 icon plus"></i>
+                                            <div>
+                                                <h4 class="nomargin descricao-product">PIZZA ARTESANALE GRANDE CALABRESA</h4>
+                                                <p recept="desc-product">Um hambúrguer enorme, 3 deliciosas fatias de queijo, tomate, alface crocante, cebola e molho especial. Tudo isso com um acompanhamento e uma bebida por um preço especial.</p>
+                                                <div class="text-center">
+                                                        <p class="nomargin" list="options-remove-product"></p>
+                                                        <p class="nomargin" list="options-param-product"></p>
+                                                        <span class="add-half"></span>
+                                                        <span class="remove-half"></span>
+                                                        <h3 style="margin-top: 0px;" recept="value-product">R$ 0,00</h3>
+                                                </div>
+                                            </div>
+                                    </div>
+
+
+                                </div>
+                                <div class="text-right hide" data-box="total-half-product">
+                                        <h1 style="margin-top: 0px;" recept="value-product">R$ 0,00</h1>
+                                </div>
+                            </ul>
+                            
+                            
+
+
+                            <div class="row actions">
+                                <div class="col-md-6 col">
+                                    <div class="text-center cart" id="qnt" data-maxlength="10">
+                                        <button class="text-center pull-left alt" data-type="minus"><i class="flaticon-horizontal39 icon"></i></button> 
+                                        <big>1</big> 
+                                        <button class="text-center pull-right alt" data-type="plus"><i class="flaticon-add186 icon"></i></button>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col">
+                                    <div class="text-center">
+                                        <button class="addtocart" action="save">Pedir</button>
+                                    </div>
+                                </div>
+                            </div>
+                </article>
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <noscript>
+        <div id="alert" class="block">
+            <div class="container">
+                <div class="col col-md-4"></div>
+                <div class="col col-md-4">
+                    <h3>Erro</h3>
+                    <p class="body">Seu navegador está com o JavaScript desativado. Ative-o no painel de configurações do seu navegador para continuar.</p>
+                    <p></p>
+                </div>
+                <div class="col col-md-4"></div>
+            </div>
+        </div>
+    </noscript>
+    <!-- HEADER -->
+    <header>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col col-xs-4 col-md-8">
+                    <img target="Cardapio" action="view" id="logoleft" class="logo hidden-xs pull-left" src="App/views/public/images/logo.png"/>
+                    <div id="menu">
+                        <a href="#">
+                            <i class="visible-sm visible-xs pull-left flaticon-menu55"></i>
+                        </a>
+                    </div>
+                    <nav id="nav" class="hidden-sm pull-left">
+                        <a href="#" target="Cardapio" action="view"><i class="icon flaticon-show6"></i> Cardápio</a>
+                        <!--<a href="#" target="Cardapio" action="view"><i class="icon flaticon-location41"></i> Informe seu CEP</a>-->
+                        <a href="login.php" id="user"  target="login-check" action="view">
+                            <div class="userimg hidden"></div>
+                            <i class="icon-facebook hide hiflaticon-facebook56"></i><i class="icon-google hide flaticon-google120"></i> <span target="name-login"><i class="icon flaticon-user157"></i> Login</span>
+                        </a>
+                       
+                        <a href="#" class="hidden" target="Recover" action="view"></a>
+                        <a href="#" class="hidden" target="MeusDados" action="view"></a>
+                        <a href="#" class="hidden" target="Pedidos" action="view"><i class="icon flaticon-list89"></i> Meus Pedidos <cite class="hide badge num-produtos">3</cite> </a>
+                        <a href="#" target="Lojas" action="view"><i class="icon flaticon-map103"></i> Lojas</a>
+                        <a href="#" target="Contato" action="view"><i class="icon flaticon-black402"></i> SAC</a>
+                         <a href="#" target="Politica" action="view" class="visible-xs"><i class="icon flaticon-visibility1"></i> Política de privacidade</a>
+                        <a href="#" target="Sobre" action="view" class="visible-xs"><i class="icon flaticon-city24"></i> Sobre nós</a>
+                        <a class="hide" href="#" id="logout"><i class="icon flaticon-exit13"></i> Sair</a> <!-- INSERIR DINAMICAMENTE QUANDO OAUTH_USER ESTIVER CARREGADO -->
+                        <!-- <a href="javascript: setLoja()">setLoja()</a> -->
+                        <a href="#" class="visible-xs" id="accon"><img src="App/views/public/images/accon_w.png"/></a>
+                    </nav>
+                </div>
+            <div target="Cardapio" action="view" class="col col-xs-4 col-md-2 hidden-md text-center"> <div id="logomiddle" class="visible-xs" style="background-image: url(App/views/public/images/logo.png)"></div></div>
+            <div class="col col-xs-4 col-md-4 text-right"> 
+                <!--<div id="warning" class="pull-left hide">
+                    <i class="icon flaticon-warning37"></i> Selecione a segunda metade
+                </div>-->
+                <div id="cart" class="border">
+                    <i class="icon flaticon-shopping232"></i> 
+                    <p class=""> <i class="badge num-produtos">0</i> <span class="hidden-xs">Itens</span><strong class="hidden-xs" role="total-pedido">R$ 0,00</strong></p>
+                    <p class="hidden"><span class="hidden-xs cep noborder" action="drop-cep-check"><!--<i class="icon flaticon-map103"></i>--> <span data-value="name-loja">Cesta de itens</span></span></p>
+                </div>
+                <nav id="basket" class="">
+                    <div list="itens-pedido">
+                        <h4 class="white nomargin text-center">Cesta de itens</h4>
+                        <p class="empty">
+                            <small>Nenhum item selecionado</small> 
+                        </p>
+                    </div>
+                    <i class="flaticon-left216 back"> <cite class="hidden-xs">continuar</cite> </i>
+                    <a href="finalizar.php" target="Finaliza" class="checkout hide" action="view"> <strong role="total-pedido">R$ 0,00</strong>Finalizar <i class="flaticon-right244"></i></a>
+                    <a href="finalizar.php" target="Finaliza-check" class="checkout" action="view"> <strong role="total-pedido">R$ 0,00</strong>Finalizar <i class="flaticon-right244"></i></a>
+                </nav>
+            </div>
+          
+
+            </div>
+        </div>
+    </header>
+    <!-- ## MENU NAV -->
+    <nav id="groups">   
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col col-md-12 col-lg-12 col-xs-12 category">
+                    <div class="row" id="categs">
+                        <div class="col col-xs-2" data-ref="PROMOÇÕES" style="background-color: #322a24"><img src="App/views/public/images/promocoes.png"/><span class="hidden-xs">PROMOÇÕES</span></div>
+                        <div class="col col-xs-2" data-ref="PIZZAS" style="background-color: #fdb633"><img src="App/views/public/images/pizza.png"/><span class="hidden-xs">PIZZAS SALGADAS</span></div>
+                        <div class="col col-xs-2" data-ref="BEBIDAS" style="background-color: #b9d735"><img src="App/views/public/images/bebidas.png"/><span class="hidden-xs">PIZZAS LIGHT</span></div>
+                        <div class="col col-xs-2" data-ref="MASSAS" style="background-color: #f65972"><img src="App/views/public/images/massas.png"/><span class="hidden-xs">PIZZAS DOCES</span></div>
+                        <div class="col col-xs-2" data-ref="ENTRADAS" style="background-color: #49c1d6"><img src="App/views/public/images/entradas.png"/><span class="hidden-xs">BEBIDAS</span></div>
+                    </div>
+                </div>
+                <!--<div class="col col-md-2 search"></div>-->
+                <!--<div class="col col-md-2 col-lg-1 col-xs-2 totop search">
+                    <i class="icon flaticon-expand38 visible-xs nomargin details"></i>
+                    <input class="hidden-xs" id="search" type="search" placeholder="Buscar"/><a href="#" class="dosearch hidden-xs"><i class="icon flaticon-search100"></i></a>
+                </div>-->
+            </div>
+        </div>
+        <div id="groupsdetails">
+            <div data-ref="PROMOÇÕES"><img src="App/views/public/images/promocoes.png"/> PROMOÇÕES</div>
+            <div data-ref="PIZZAS"><img src="App/views/public/images/pizza.png"/> PIZZAS SALGADAS</div>
+            <div data-ref="BEBIDAS"><img src="App/views/public/images/bebidas.png"/> PIZZAS LIGHT</div>
+            <div data-ref="MASSAS"><img src="App/views/public/images/massas.png"/> PIZZAS DOCES</div>
+            <div data-ref="ENTRADAS"><img src="App/views/public/images/entradas.png"/> BEBIDAS</div>
+            <!--<div class="search">
+                <input id="search" type="search" placeholder="Buscar"/><a href="#" class="dosearch pull-right"><i class="icon flaticon-search100"></i></a>
+            </div>-->
+        </div>
+    </nav>
+
+    
+    <!--<div id="banner" class="visible-xs">
+        <i class="icon flaticon-close47 pull-left closebanner"></i><span class="pull-right openbasket">Finalizar <i class="icon flaticon-right244"></i></span><p><span class="badge">99</span> <i class="icon flaticon-shopping232"></i> R$999.99</p>
+    </div>-->
+    <!-- ## AVISO PIZZA PELA METADE -->
+
+    <div id="pizzametade" class="hide">
+        <p>Selecione agora a segunda metade da sua pizza</p>
+    </div>
+
+     <!-- Aplicar condições de exibição aqui -->
+    <div id="map" class="container-fluid hidden"></div>
+    <div class="container-fluid" id="promocoes" data-speed="5000">
+        <div class="control glide__arrows hidden">
+            <i data-glide-dir="<" class="icon flaticon-keyboard54 pull-left "></i>
+            <i data-glide-dir=">" class="icon flaticon-keyboard53 pull-right"></i>
+        </div>
+        <div class="row glide__track" list="banner-promo">
+               
+
+                <article class="slide glide__slide" style="background-image: url(http://pizzahutbrasilia.com.br/App/views/public/images/promocoes/3.jpg)" onClick=""></article>
+                <article class="slide glide__slide" style="background-image: url(http://pizzahutbrasilia.com.br/App/views/public/images/promocoes/4.jpg)" onClick=""></article>
+                <article class="slide glide__slide" style="background-image: url(http://pizzahutbrasilia.com.br/App/views/public/images/promocoes/5.jpg)" onClick=""></article>
+        
+        </div>
+        <ul class="glide__bullets bullets"></ul>
+    
+    </div>
+
+
+
+
+
+
+
+<!-- // CONTAINER CONTENT -->
+    <section class="container-fluid" id="content" container="all-content"></section>
+<!-- ## FOOTTER -->
+
+
+
+
+
+
+
+
+
+    <footer>
+        <div class="container hidden-xs">
+            <div class="col col-md-3">
+                
+                <h3 style="text-transform: initial">Dídio Pizza</h3>
+                <p><a href="#" target="Sobre" action="view">Sobre nós</a></p>
+                <p><a href="#" target="Lojas" action="view">Lojas</a></p>
+                <p><a href="#" target="Politica" action="view">Política de privacidade</a></p>
+                <p><a href="#" target="Contato" action="view">SAC</a></p>
+                <p><big><a href="https://pt-br.facebook.com/pizzahutbrasil" target="_blank"><i class="flaticon-facebook56"></i></a> <a href="https://instagram.com/pizzahutbrasil/" target="_blank"><i class="flaticon-instagram16"></i></a> <a href="https://twitter.com/pizzahutbr" target="_blank"><i class="flaticon-twitter47"></i></a></big></p>
+                
+            </div>
+            <div class="col col-md-3 hidden-xs">
+                <h3>Baixe o aplicativo móvel</h3>
+                <p><a target="_blank" href="https://itunes.apple.com/us/app/pizza-hut-brasilia/id1010678858?l=pt&ls=1&mt=8"><img src="App/views/public/images/apple.png"/></a></p>
+                <p><a target="_blank" href="https://play.google.com/store/apps/details?id=br.com.accon.pizzahut.brasilia"><img src="App/views/public/images/google.png"/></a></p>
+                <p><a target="_blank" href="https://www.microsoft.com/pt-br/store/apps/pizza-hut-brasilia/9nblggh2vbx3"><img src="App/views/public/images/windows.png"/></a></p>
+                <p><img src="App/views/public/images/qrcode.png" width="70px" height="70px" /></p>
+            </div>
+            <div class="col col-md-3 hidden-xs text-center">
+                <p class="invert"><i class="icon flaticon-clock100"></i> Horário de funcionamento: 18:00 - 23:30</p>
+                <p><img id="img-alcool" src="App/views/public/images/alcool.png" width="100%" height="auto"/></p>
+                <p><img src="App/views/public/images/procon.png" width="100px" height="auto"/></p>
+                
+            </div>
+            <div class="col col-md-3 text-center">
+                <p></p>
+                <p><img src="App/views/public/images/logo-alt.png" width="150px" height="auto"/></p>
+                <p style="margin-top: 15px">Desenvolvido por <br/> <a href="http://accon.com.br/" target="_blank"><img src="App/views/public/images/accon.png" width="120" style="margin-left: -10px; margin-top: -5px"/></a><br/><small>Versão <span data-version="app">1.0</span></small></p>
+                <p><a href="http://accon.com.br/" target="_blank"><img src="App/views/public/images/pixie.png" width="100"/></a></p>
+                <p><a href="https://mixpanel.com/f/partner" rel="nofollow" target="_blank"><img src="//cdn.mxpnl.com/site_media/images/partner/badge_light.png" alt="Mobile Analytics" /></a></p>
+                
+            </div>
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <footer class="hidden" id="altfooter">
+        <div class="container">
+            <div class="col col-md-12">
+                <h5 style="margin-top: 0px; padding-top: 0px; background: transparent">Baixe o aplicativo móvel</h5>
+                <p>
+                    <a target="_blank" href="https://itunes.apple.com/us/app/pizza-hut-brasilia/id1010678858?l=pt&ls=1&mt=8"><img height="30" width="auto" src="App/views/public/images/apple.png" style="margin: 2px auto;"/></a> 
+                    <a target="_blank" href="https://play.google.com/store/apps/details?id=br.com.accon.pizzahut.brasilia"><img height="30" width="auto" src="App/views/public/images/google.png" style="margin: 2px auto;"/></a> 
+                    <a target="_blank" href="https://www.microsoft.com/pt-br/store/apps/pizza-hut-brasilia/9nblggh2vbx3"><img height="30" width="auto" src="App/views/public/images/windows.png" style="margin: 2px auto;"/></a>
+                </p>
+            </div>
+        </div>
+    </footer>
+    
+ 
+    <script src="App/views/public/js/plugins.js" onLoad=" _plugins = true"></script>
+    <script src="App/views/public/js/main.js" onLoad=" _model = true"></script>
+    <script src="App/views/public/js/js_produto.js"></script>
+    <script src="App/views/public/js/js_car.js"></script>
+    <script src="App/views/public/js/js_pedido.js"></script>
+    <script src="App/views/public/js/js_user.js"></script>
+    <script src="App/views/public/js/js_loja.js"></script>
+    <script src="App/views/public/js/js_cep.js"></script>
+    <script src="App/views/public/js/js_taxa.js"></script>
+    <script src="App/views/public/js/js_formaPagamento.js"></script>
+    <script src="App/views/public/js/js_address.js"></script>
+    <script src="App/views/public/js/js_email.js"></script>
+    <script src="App/views/public/js/js_combo.js"></script>
+    <script src="App/views/public/js/js_cupom.js"></script>
+   
+
+    <script src="App/views/public/js/auth.js" onLoad=" _auth = true"></script>
+    <script src="App/views/public/js/services.js" onLoad=" _auth = true"></script>
+    <script src="App/views/public/js/view.js" onLoad=" _view = true"></script>
+    <script src="App/views/public/js/model.js" onLoad=" _model = true"></script>
+    <script src="App/views/public/js/js_api.js"></script>
+     <script src="App/views/public/js/js_notification.js"></script>
+
+
+
+    <script>
+        window.setTimeout('checkJs()', 10);
+        function checkJs(){
+            if(!_jquery || !_plugins || !_view || !_model || !_auth){
+                //alert('Não foi possível carregar todos os arquivos necessários do servidor. Tente novamente ou entre em contato com a Assistencia Técnica: 0800 23245')
+                //console.log("Erro ao carregar (false para não carregado): jQuery: " + _jquery + ", plugins.js: " + _plugins + ", view.js: " + _view + ", model.js: " _model + ", auth.js: " + _auth)
+            }
+        }
+    </script>
+    <!--<script type="text/javascript">
+        (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/pt_BR/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+    <script type="text/javascript">
+        (function() {
+            var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+            po.src = 'https://apis.google.com/js/client:plusone.js?onload=renderGoogleButton&language=pt-BR';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+        })();
+    </script>-->
+    <!--<script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-71525927-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+    <script type="text/javascript">(function(e,b){if(!b.__SV){var a,f,i,g;window.mixpanel=b;b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable time_event track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.union people.track_charge people.clear_charges people.delete_user".split(" ");
+        for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2;a=e.createElement("script");a.type="text/javascript";a.async=!0;a.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?MIXPANEL_CUSTOM_LIB_URL:"file:"===e.location.protocol&&"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)?"https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js":"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";f=e.getElementsByTagName("script")[0];f.parentNode.insertBefore(a,f)}})(document,window.mixpanel||[]);
+        mixpanel.init("09915749048e94e698582280ef6b34e0");</script>
+        <script src="App/views/public/js/js_crm.js"></script>-->
+
+
+    </body>
+</html>

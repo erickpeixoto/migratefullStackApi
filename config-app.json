@@ -1,0 +1,24 @@
+
+		{
+			"URL": "http://pizzahutbrasilia.com.br/",
+			"VERSION": "1.0",
+			"STATE": {
+					   "CHECK" : true, 
+					   "INTERVAL" : 4 
+					 },
+			"GROUPS_DEFAULT": [6],
+			"RECOVER": {
+						"SALT": "1e094b6dbf3867085534b3f4ce9830a23ebe6a2a"
+						},
+			"API": {
+					  "CEP": "http://api.accontecnologia.com.br:5888/cep/",
+					  "MAILER": "http://api.accontecnologia.com.br:5888/send/",
+					  "SQL"   : "http://api.pizzahutbrasilia.com.br/"
+
+			 },
+			"CREDENTIAL_API": {
+					  
+					  "control-access-credentials" : "uxPg+PE2uG2VqXe6bSg2rysL1j0="	
+					}		
+		}
+

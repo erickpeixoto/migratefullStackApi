@@ -1,0 +1,116 @@
+<section class="container autoheight hidden spacing" id="login" view="Login"  container="login">
+
+    <div class="row">
+        <article class="col col-sm-6">
+            <div class="row">
+                <div class="col col-md-12">
+                    <h1 class="nomargin">Criar minha conta</h1>
+                </div>
+            </div>
+            <div class="col-md-12 imagecanvas radius10 hidden-xs" style="background-image: url(App/views/public/images/about/14.jpg); height: 240px; margin-top: 20px;"></div>
+
+            <form submit="check-cep-cadastro" style="display: block; clear: both; padding: 15px 0;" autocomplete="off">
+                <h3 class="text-left">Verifique aqui seu CEP</h3>
+                <p><input type="text" name="CEP" mask="CEP" data-mask-reverse="true" placeholder="CEP"/></p>
+                <div class="row">
+                    <article class="col col-sm-6">
+                        <p><a><button alt="cadastro">Continuar</button></a><a class="hidden" target="Cadastro" action="view"></a></p>
+                    </article>
+                    <article class="col col-sm-6 text-center">
+                        <p class="margin10 hidden">Mensagem de retorno</p>
+                    </article>
+                </div>
+                
+            </form>
+         </article>
+         <article class="col col-sm-6">
+            <p class="visible-xs"></br></br></p>
+            <div class="row">
+                <div class="col col-md-12">
+                    <h1 class="nomargin">Login</h1>
+                </div>
+            </div>
+            <section role="social">
+                <form class="login" submit="login-user" autocomplete="off">
+                    
+                    <!--<div id="loginsocial">
+                        <p><button type="button" class="social facebook text-center" onClick="loginFacebook()" onlogin="checkLoginState()"><i class="icon flaticon-facebook56"></i> Conectar via Facebook</button></p>
+                        <p><button type="button" class="social google text-center" id="google"><i class="icon flaticon-google120"></i> Conectar via Google</button></p>
+                    </div>-->
+                    <p style="display: block; height: 22px;"></p>
+                    <h3 class="text-left">Acesse com seu e-mail e senha</h3>
+                    <div class="alert alert-danger hide not-login">
+                             <button type="button" class="close" data-dismiss="alert" aria-label="Close" style="
+                                        text-align: right;
+                                    "><span style="
+                                        position: relative;
+                                        margin-top: -12px;
+                                        float: right;
+                                        margin-right: -8px;
+                                    " title="Clique para fechar">×</span></button>
+                             <strong>Atenção! </strong> Dados não econtrados. Por favor, verifique.</div>
+                    
+                    <p><input type="email" name="e-mail" placeholder="E-mail" required="required" /></p>
+                    <p><input type="password" name="pwd" placeholder="Senha"/></p>
+                    <p class="text-left"><input type="checkbox" name="" checked/> Mantenha-me conectado</p>
+
+                   
+                      <div class="alert hide alert-danger alert-recovery">
+                             <button type="button" class="close" data-dismiss="alert" aria-label="Close" style="
+                                        text-align: right;
+                                    "><span style="
+                                        position: relative;
+                                        margin-top: -12px;
+                                        float: right;
+                                        margin-right: -8px;
+                                    " title="Clique para fechar">×</span></button>
+                                    E-mail não econtrado, verifique os dados.</div>
+
+
+                  
+                    <div class="row alert alert-info hide" data-container="recover-pwd">
+                     <button type="button" class="close" data-dismiss="alert" aria-label="Close" style="
+                                        text-align: right;
+                                    "><span style="
+                                        position: relative;
+                                        margin-top: -12px;
+                                        float: right;
+                                        margin-right: -8px;
+                                    " title="Clique para fechar">×</span></button>
+                        <p><input type="email" name="e-mail-recover" placeholder="Digite o e-mail" /></p>
+                    </div>
+                  <div class="row alert alert-success success-email hide">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close" style="
+                                        text-align: right;
+                                    "><span style="
+                                        position: relative;
+                                        margin-top: -12px;
+                                        float: right;
+                                        margin-right: -8px;
+                                    " title="Clique para fechar">×</span></button>
+                              Enviamos um link para: <strong class="email-seccess">e-mail</strong> . <br> Acesse para redefinir sua senha.
+                  </div>
+                    
+                    
+
+
+                    <div class="row">
+                        <article class="col col-sm-6">
+                            <p><button type="button" class="alt" action="recoverPwd" alt="recuperar">Esqueci a senha</button></p>
+                        </article>
+                        <article class="col col-sm-6" >
+                            <p><a href="index.php"><button type="submit" alt="login">Entrar</button></a></p>
+                        </article>
+                    </div>
+                     
+                </form>
+            </section>
+    
+         </article>
+         
+
+        <span class="recept-loggoff"></span>
+   </div>
+
+</section>
+

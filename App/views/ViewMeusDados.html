@@ -1,0 +1,99 @@
+
+    <section class="container hidden spacing" id="content" view="MeusDados">
+ 
+        <article class="row" style="margin-bottom: 15px">
+            <div class="col col-md-12">
+                <h1 class="nomargin">Minha conta</h1>
+
+                <span data-origin="login" class="hidden-xs"></span>
+                
+                <span class="success-logged logOff-user pointer" title="clique para sair" role="btn-logoff"><i class="fa fa-power-off"></i></span>  
+            </div>
+        </article>
+
+        <article class="row">
+
+
+            <form class="col col-md-6" submit="update-cliente" autocomplete="off">
+
+                
+                                    
+                <div>
+                    <article class="hide boxcenter alert alert-warning">
+                        <p></p>
+                    </article>
+                    <h3 class=""> <i class="icon flaticon-map103"></i> Dados pessoais</h3>
+                
+                    <p><input type="text" name="nome" placeholder="Nome completo" required="required"/><span class="required">*</span></p>
+                    <p><input type="text"  name="cpf-cnpj" mask="CPF-CNPJ" placeholder="CPF" required="required"/><span class="required">*</span></p>
+                    <p><input type="text"  name="fone" mask="PHONE" placeholder="(DDD) + Telefone" required="required"/><span class="required">*</span></p>
+                    
+                
+                    <h3 class=""> <i class="icon flaticon-https"></i> Dados de acesso</h3>
+                    <p><input type="email" name="email" disabled="disabled" placeholder="E-mail" required="required"/></p>
+
+                    <p><input type="password" name="pwd" placeholder="Senha (mínimo 6 caracteres)"  required="required"/><span class="required">*</span></p>
+                    <p><input type="password" name="re-pwd" placeholder="Repita a senha" required="required" /><span class="required">*</span></p>
+                    
+                    <p><input type="hidden"  name="id" /></p>
+                    <p>(*) Campos obrigatórios</p>
+                       <button>Alterar meus dados</button>
+                </div>
+             </form>
+
+             <div class="col col-md-6" container="address-user-finaliza">
+                <p class="visible-xs"><br/><br/></p>
+                <h3 class=""> <i class="icon flaticon-map103"></i> Meus endereços</h3>
+                <p></p>
+                <ul class="address clearfix" action="add-address">
+                    <li action="new-cadastro">
+                        <i class="flaticon-round57"></i>
+                        <p>Adicionar</p>
+                    </li>
+                    <span list="address-usuario" class="address-user-finaliza"></span>
+
+                </ul>
+                <p><br><br></p>
+
+                <form  submit="address-finaliza" class="hide" autocomplete="off">
+
+                    <article class="boxcenter alert alert-warning"> <i class="flaticon-map103"></i></article>
+                    <p><input type="text" name="apelido-address" placeholder="Apelido do endereço (Ex: casa, apartamento)" required="required"/><span class="required">*</span></p>
+                    <p><input type="text" disabled="disabled"  name="cep-address" placeholder="CEP" mask="CEP" required="required"/><span class="required">*</span></p>
+                    <p><input type="text" disabled="disabled" name="rua-address" placeholder="Rua" required="required"/><span class="required">*</span></p>
+                    <p><input type="text" name="numero-address" placeholder="Número" required="required"/><span class="required">*</span></p>
+                    <p><input type="text" name="complemento-address" placeholder="Complemento"/></p>
+                    <p><input type="text" name="referencia-address" placeholder="Ponto de referência"/></p>
+                    <p><input type="text" disabled="disabled" name="bairro-address" placeholder="Bairro" required="required"/><span class="required">*</span></p>
+                    <p><input type="text" disabled="disabled" name="localidade-address" placeholder="Cidade" required="required"/><span class="required">*</span></p>
+                    <p><input type="text" disabled="disabled" name="uf-address" placeholder="Estado" required="required"/><span class="required">*</span></p>
+                    <input type="hidden" name="ID">
+                    <p>(*) Campos obrigatórios</p>
+                    <p class="text-right"><button  action="update-usuario">Alterar endereço</button></p> 
+                </form>
+                <form  submit="create-address-finaliza" class="hide" autocomplete="off">
+
+                    <article class="boxcenter alert alert-warning">
+                        <p>Preencha o formulário abaixo para adiconar um endereço</p>
+                    </article>
+
+                    <p><input type="text" name="apelido-address" placeholder="Apelido do endereço (Ex: casa, apartamento)" required="required"/><span class="required">*</span></p>
+                    <p><input type="text" name="cep-address" placeholder="CEP"  mask="CEP" required="required"/><span class="required">*</span></p>
+                    <p><input type="text" name="rua-address" placeholder="Rua" required="required"/><span class="required">*</span></p>
+                    <p><input type="text" name="numero-address" placeholder="Número" required="required" /><span class="required">*</span></p>
+                    <p><input type="text" name="complemento-address" placeholder="Complemento"/></p>
+                    <p><input type="text" name="referencia-address" placeholder="Ponto de referência"/></p>
+                    <p><input type="text" name="bairro-address" placeholder="Bairro" required="required"/><span class="required">*</span></p>
+                    <p><input type="text" name="localidade-address" placeholder="Cidade" required="required"/><span class="required">*</span></p>
+                    <p><input type="text" name="uf-address" placeholder="Estado" required="required"/><span class="required">*</span></p>
+                    <p>(*) Campos obrigatórios</p>
+                    <p class="text-right"><button  action="update-usuario">Adicionar</button></p> 
+
+                </form>                                    
+            </div>
+        </article>
+
+
+
+              
+    </section>
