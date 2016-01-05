@@ -27,14 +27,14 @@ abstract class DaoCombo extends ControllerHelper{
  *
  */
   public function _POST(EntitieCombo $COMBO){
-        
+
           $SERVICE = $COMBO->getSERVICE();
           $ENTITIE = $COMBO->getENTITIE();
           $PDO     = ControllerFront::makeObj(PATH_CONTROLLER, "ControllerConexao")->getConnection();
-  
-  
+
+
               switch ($SERVICE['OPERATION']):
-                    
+
 
                      /**
                        * @example OPERAÇÃO DE PERSISTÊNCIA - INSERT
@@ -43,7 +43,7 @@ abstract class DaoCombo extends ControllerHelper{
                        *
                        **/
                             case 'INSERIR':
-                                         
+
                                        #CODE
                           break;
 
@@ -64,13 +64,13 @@ abstract class DaoCombo extends ControllerHelper{
  *
  */
       public function _GET(EntitieCombo $COMBO){
-         
+
               $SERVICE   = $COMBO->getSERVICE();
               $ENTITIE   = $COMBO->getENTITIE();
               $PDO       = ControllerFront::makeObj(PATH_CONTROLLER, "ControllerConexao")->getConnection();
               $RESPONSE  = array();
                   switch ($SERVICE['OPERATION']):
-                      
+
 
                          /**
                            * @example OPERAÇÃO DE PERSISTÊNCIA - SELECT UPDATE
@@ -79,9 +79,9 @@ abstract class DaoCombo extends ControllerHelper{
                            *
                            **/
                                 case 'ALL':
-                                      
-                                        
-                                   $COMBOS = ControllerFront::makeObj("App/controllers/", "ControllerCrud")->readData( 
+
+
+                                   $COMBOS = ControllerFront::makeObj("App/controllers/", "ControllerCrud")->readData(
                                                                                                                 Array ('campos'   => array_keys($ENTITIE['ATTRIBUTES']),
                                                                                                                        'tabelas'  => Array (0 => $ENTITIE['NAME']),
                                                                                                                        'where'    => null,
@@ -89,13 +89,13 @@ abstract class DaoCombo extends ControllerHelper{
                                                                                                                        'PDO'         => $PDO,
                                                                                                                        'BASE'        => null,
                                                                                                                        'COMPLEMENTO' => null));
-                                          
-                                             
-                                      
+
+                                            print_r($COMBOS); 
+
                                         foreach ($COMBOS as $key => $getCombo):
 
 
-                                              
+
                                                  $PROMO = ControllerFront::makeObj("App/controllers/", "ControllerCrud")->readData(Array ('campos'  => array_keys($ENTITIE['ATTRIBUTES_AUX']),
                                                                                                                                            'tabelas' => Array (0 => $ENTITIE['AUX']),
                                                                                                                                           'where'   =>  array('op_comparacao' => Array(0 => "="),
@@ -105,18 +105,18 @@ abstract class DaoCombo extends ControllerHelper{
                                                                                                                                            'limit'   => null,
                                                                                                                                            'PDO'     => $PDO,
                                                                                                                                            'COMPLEMENTO' => null));
-                                               
-                                                 $ARROW_PRODUTOS  = array();   
-                                                 $COMBOS    = array();   
-                                                 $PRODUTOS  = array();   
+
+                                                 $ARROW_PRODUTOS  = array();
+                                                 $COMBOS    = array();
+                                                 $PRODUTOS  = array();
                                                  $QTD_ITENS = 100;
                                                  $ITENS = array();
-                                                  
-                                             
+
+
                                               foreach ($PROMO as $key => $getPromo):
 
-                                                  
-                                                        for ($i=1; $i <= $QTD_ITENS; $i++) { 
+
+                                                        for ($i=1; $i <= $QTD_ITENS; $i++) {
 
                                                             if($getPromo['CPR_ITEM'] == $i){
 
@@ -124,28 +124,28 @@ abstract class DaoCombo extends ControllerHelper{
                                                                        array_push($COMBOS, $getPromo);
                                                             }
                                                         }
-                                                     
+
                                                 endforeach;
 
-                                                     
-                                             
+
+
 
                                                     foreach (array_count_values($ARROW_PRODUTOS) as $k => $totalItens) {
-                                                                 
+
                                                                     $aux = array();
-                                                          
+
                                                                   foreach ($PROMO as $key => $getPromo):
-                                                                       
-                                                                      
+
+
                                                                         if(($k) == $getPromo['CPR_ITEM']){
-                                                              
+
                                                                                  array_push($aux, $getPromo);
 
                                                                           }
 
 
                                                              endforeach;
-                                                                      
+
                                                                       array_push($ITENS, $aux);
 
 
@@ -153,7 +153,7 @@ abstract class DaoCombo extends ControllerHelper{
                                                                            $getCombo['ITENS'] =  $ITENS;
 
 
-                                                                            $TIPOS = ControllerFront::makeObj("App/controllers/", "ControllerCrud")->readData( 
+                                                                            $TIPOS = ControllerFront::makeObj("App/controllers/", "ControllerCrud")->readData(
                                                                                                                                 Array ('campos'  => array(0 => 'COMBO.COP_TIPO',
                                                                                                                                                           1 => 'TIPO.PTI_ID',
                                                                                                                                                           2 => 'TIPO.PTI_ECOMMERCE_DEFAULT',
@@ -169,7 +169,7 @@ abstract class DaoCombo extends ControllerHelper{
                                                                                                                                        'BASE'        => null,
                                                                                                                                        'COMPLEMENTO' => null));
 
-                                                                            $TAMANHOS = ControllerFront::makeObj("App/controllers/", "ControllerCrud")->readData( 
+                                                                            $TAMANHOS = ControllerFront::makeObj("App/controllers/", "ControllerCrud")->readData(
                                                                                                                                 Array ('campos'  =>  array(0 => 'TAMANHO.PTA_ID',
                                                                                                                                                            1 => 'TAMANHO.PTA_TAMANHO',
                                                                                                                                                            2 => 'TAMANHO.PTA_TIPO',
@@ -187,16 +187,16 @@ abstract class DaoCombo extends ControllerHelper{
                                                                                                                                        'BASE'        => null,
                                                                                                                                        'COMPLEMENTO' => null));
 
-                                                                          $getCombo['TIPOS'] = $TIPOS; 
-                                                                          $getCombo['TAMANHOS'] = $TAMANHOS; 
+                                                                          $getCombo['TIPOS'] = $TIPOS;
+                                                                          $getCombo['TAMANHOS'] = $TAMANHOS;
 
-                                                                      array_push($RESPONSE, $getCombo); 
+                                                                      array_push($RESPONSE, $getCombo);
 
 
 
-                                        endforeach; 
+                                        endforeach;
 
-                                       return ($RESPONSE) ?  $RESPONSE : false; 
+                                       return ($RESPONSE) ?  $RESPONSE : false;
 
                                 break;
 
@@ -220,14 +220,14 @@ abstract class DaoCombo extends ControllerHelper{
  *
  */
     public function _PUT(EntitieCombo $COMBO){
-        
+
           $SERVICE = $COMBO->getSERVICE();
           $ENTITIE = $COMBO->getENTITIE();
           $PDO     = ControllerFront::makeObj(PATH_CONTROLLER, "ControllerConexao")->getConnection();
-      
-  
+
+
               switch ($SERVICE['OPERATION']):
-                    
+
                      /**
                        * @example OPERAÇÃO DE PERSISTÊNCIA - INSERT
                        * @return boolean
@@ -261,12 +261,12 @@ abstract class DaoCombo extends ControllerHelper{
  *
  */
     public function _DELETE(EntitieCombo $COMBO){
-       
+
           $SERVICE = $COMBO->getSERVICE();
           $ENTITIE = $COMBO->getENTITIE();
           $PDO     = ControllerFront::makeObj(PATH_CONTROLLER, "ControllerConexao")->getConnectionDefaultController();
-      
-  
+
+
               switch ($SERVICE['OPERATION']):
                      /**
                        * @example OPERAÇÃO DE PERSISTÊNCIA - INSERT
@@ -285,5 +285,5 @@ abstract class DaoCombo extends ControllerHelper{
                           break;
            endswitch;
       }
-      
+
 } // CLASS END
