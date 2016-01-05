@@ -35,7 +35,7 @@ include_once(PATH_CONTROLLER."ControllerHelper.php");
 
 								case 'COMBO':
 
-										return json_encode(ControllerFront::makeObj(PATH_CONTROLLER, "ControllerCupom")->_set($DATA);
+										echo ControllerFront::makeObj(PATH_CONTROLLER, "ControllerCupom")->_set($DATA);
 								break;
 
 								case 'PEDIDO':
