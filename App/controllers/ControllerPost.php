@@ -1,4 +1,6 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 /**
 * Classe Camada de Controle - MVC
 *
@@ -33,8 +35,6 @@ include_once(PATH_CONTROLLER."ControllerHelper.php");
 								break;
 
 								case 'COMBO':
-									  echo "aqui é controller";
-										print_r(ControllerFront::makeObj(PATH_CONTROLLER, "ControllerCombo")->_set($DATA));
 										echo json_encode(ControllerFront::makeObj(PATH_CONTROLLER, "ControllerCombo")->_set($DATA));
 								break;
 
