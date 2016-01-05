@@ -89,7 +89,7 @@ abstract class DaoCombo extends ControllerHelper{
                                                                                                                        'PDO'         => $PDO,
                                                                                                                        'BASE'        => null,
                                                                                                                        'COMPLEMENTO' => null));
-
+print_r($COMBOS);
                                         foreach ($COMBOS as $key => $getCombo):
 
 
