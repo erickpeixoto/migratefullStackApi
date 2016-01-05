@@ -193,7 +193,7 @@ print_r($COMBOS);
 
 
                                         endforeach;
-
+                                        print_r($RESPONSE);  
                                        return ($RESPONSE) ?  $RESPONSE : false;
 
                                 break;
