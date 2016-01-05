@@ -90,14 +90,6 @@ abstract class DaoCombo extends ControllerHelper{
                                                                                                                        'BASE'        => null,
                                                                                                                        'COMPLEMENTO' => null));
 
-                                            print_r(Array ('campos'   => array_keys($ENTITIE['ATTRIBUTES']),
-                                                   'tabelas'  => Array (0 => $ENTITIE['NAME']),
-                                                   'where'    => null,
-                                                   'limit'       => null,
-                                                   'PDO'         => $PDO,
-                                                   'BASE'        => null,
-                                                   'COMPLEMENTO' => null));
-
                                         foreach ($COMBOS as $key => $getCombo):
 
 
