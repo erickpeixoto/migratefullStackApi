@@ -1,17 +1,16 @@
 
 		{
-		
-			"URL": "http://ecommerce.accondev.com.br/",
+
+			"URL": "http://desenvolvimento.didionow.com.br/",
 
 			"CONNECTION": {
 							"DRIVER"   : "mysql",
                       	    "HOST"     : "cpmy0129.servidorwebfacil.com",
-                            "BASE"     : "porphut_consolidado",
-                            "USER"     : "porphut_phut",
-                            "PASSWORD" : "phut2125"
+                            "BASE"     : "pdidio_bdportaldidio",
+                            "USER"     : "pdidio_didio",
+                            "PASSWORD" : "didi2125"
 						  },
 			"RESTFUL": true,
 			"HASHINGSALT": "1e094b6dbf3867085534b3f4ce9830a23ebe6a2a",
 			"SALTUNIQUE":  "module-security"
 		}
-
