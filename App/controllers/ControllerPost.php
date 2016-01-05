@@ -15,7 +15,7 @@ include_once(PATH_CONTROLLER."ControllerHelper.php");
 
 
 		class ControllerPost extends ControllerHelper{
-			
+
 
 
 			  function _SET(array $DATA){
@@ -23,11 +23,11 @@ include_once(PATH_CONTROLLER."ControllerHelper.php");
  										ControllerFront::makeObj(PATH_CONTROLLER, "ControllerConexao")->_SET($DATA['CONFIG']);
 
 					switch ($DATA['POST']['SERVICE']):
-							
+
 								case 'USUARIO':
 										echo json_encode(ControllerFront::makeObj(PATH_CONTROLLER, "ControllerUsuario")->_set($DATA));
 								break;
-							 
+
 							 	case 'PRODUTO':
 										echo json_encode(ControllerFront::makeObj(PATH_CONTROLLER, "ControllerProduto")->_set($DATA));
 								break;
@@ -51,7 +51,7 @@ include_once(PATH_CONTROLLER."ControllerHelper.php");
 								case 'CEP':
 										echo json_encode(ControllerFront::makeObj(PATH_CONTROLLER, "ControllerCep")->_set($DATA));
 								break;
-								
+
 								case 'TAXA':
 										echo json_encode(ControllerFront::makeObj(PATH_CONTROLLER, "ControllerTaxa")->_set($DATA));
 								break;
@@ -67,8 +67,8 @@ include_once(PATH_CONTROLLER."ControllerHelper.php");
 								case 'EMAIL':
 										echo json_encode(ControllerFront::makeObj(PATH_CONTROLLER, "ControllerEmail")->_set($DATA));
 								break;
-								
+
 					endswitch;
 			}
-						
+
 }  // END CLASS

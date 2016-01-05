@@ -57,6 +57,8 @@ class ControllerCombo extends DaoCombo {
 																				'CPR_ITEM'    => null,
 						  														'CPR_PRECO'	  => null,
 						  														'CPR_PRO_ID'  => null));
+
+
 																				return parent::_GET($COMBO);				
 												break;
 
