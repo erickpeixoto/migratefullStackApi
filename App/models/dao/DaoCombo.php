@@ -96,7 +96,7 @@ abstract class DaoCombo extends ControllerHelper{
                                                    'limit'       => null,
                                                    'PDO'         => $PDO,
                                                    'BASE'        => null,
-                                                   'COMPLEMENTO' => null)); 
+                                                   'COMPLEMENTO' => null));
 
                                         foreach ($COMBOS as $key => $getCombo):
 
@@ -165,7 +165,7 @@ abstract class DaoCombo extends ControllerHelper{
                                                                                                                                                           2 => 'TIPO.PTI_ECOMMERCE_DEFAULT',
                                                                                                                                                           3 => 'TIPO.PTI_ECOMMERCE_IMG',
                                                                                                                                                           4 => 'TIPO.PTI_TIPO'),
-                                                                                                                                       'tabelas' => Array (0 =>  'porphut_consolidado.AWE_COMBO_OPCOES_DB AS COMBO INNER JOIN porphut_consolidado.AWE_PRODUTO_TIPOS_DB AS TIPO ON COMBO.COP_TIPO = TIPO.PTI_ID'),
+                                                                                                                                       'tabelas' => Array (0 =>  'pdidio_bdportaldidio.AWE_COMBO_OPCOES_DB AS COMBO INNER JOIN pdidio_bdportaldidio.AWE_PRODUTO_TIPOS_DB AS TIPO ON COMBO.COP_TIPO = TIPO.PTI_ID'),
                                                                                                                                        'where'   =>  array('op_comparacao' => Array(0 => "="),
                                                                                                                                                            'op_logico'     => null,
                                                                                                                                                            'campo'         => Array(0 => 'COMBO.COP_CMB_ID'),
@@ -183,7 +183,7 @@ abstract class DaoCombo extends ControllerHelper{
                                                                                                                                                            4 => 'TAMANHO.PTA_ECOMMERCE_IMG',
                                                                                                                                                            5 => 'TAMANHO.PTA_ECOMMERCE_FATIAS',
                                                                                                                                                            6 => 'COMBO.COP_TAMANHO'),
-                                                                                                                                       'tabelas' => Array (0 => 'porphut_consolidado.AWE_COMBO_OPCOES_DB AS COMBO INNER JOIN porphut_consolidado.AWE_PRODUTO_TAMANHOS_DB AS TAMANHO ON COMBO.COP_TAMANHO = TAMANHO.PTA_ID'),
+                                                                                                                                       'tabelas' => Array (0 => 'pdidio_bdportaldidio.AWE_COMBO_OPCOES_DB AS COMBO INNER JOIN pdidio_bdportaldidio.AWE_PRODUTO_TAMANHOS_DB AS TAMANHO ON COMBO.COP_TAMANHO = TAMANHO.PTA_ID'),
                                                                                                                                        'where'   =>  array('op_comparacao' => Array(0 => "="),
                                                                                                                                                            'op_logico'     => null,
                                                                                                                                                            'campo'         => Array(0 => 'COMBO.COP_CMB_ID'),

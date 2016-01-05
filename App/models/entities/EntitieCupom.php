@@ -20,8 +20,8 @@
      //ATRIBUTOS ENCAPSULADOS
       private $POST = array();
       private $SERVICE = array();
-      private $ENTITIE = array('NAME'  => 'porphut_consolidado.AWE_DESCONTOS_DB',
-                               'AUX'   => 'porphut_consolidado.AWE_PROMO_CODIGOS',
+      private $ENTITIE = array('NAME'  => 'pdidio_bdportaldidio.AWE_DESCONTOS_DB',
+                               'AUX'   => 'pdidio_bdportaldidio.AWE_PROMO_CODIGOS',
                                'ATTRIBUTES' => array(),
                                'ATTRIBUTES_AUX' => array());
     

@@ -28,14 +28,14 @@ abstract class DaoCupom extends ControllerHelper{
  *
  */
   public function _POST(EntitieCupom $CUPOM){
-        
+
           $SERVICE = $CUPOM->getSERVICE();
           $ENTITIE = $CUPOM->getENTITIE();
           $PDO     = ControllerFront::makeObj(PATH_CONTROLLER, "ControllerConexao")->getConnection();
-  
-  
+
+
               switch ($SERVICE['OPERATION']):
-                    
+
 
                      /**
                        * @example OPERAÇÃO DE PERSISTÊNCIA - INSERT
@@ -44,7 +44,7 @@ abstract class DaoCupom extends ControllerHelper{
                        *
                        **/
                             case 'INSERIR':
-                                         
+
                                        #CODE
                           break;
 
@@ -65,14 +65,14 @@ abstract class DaoCupom extends ControllerHelper{
  *
  */
       public function _GET(EntitieCupom $CUPOM){
-         
+
               $SERVICE   = $CUPOM->getSERVICE();
               $ENTITIE   = $CUPOM->getENTITIE();
               $PDO       = ControllerFront::makeObj(PATH_CONTROLLER, "ControllerConexao")->getConnection();
               $RESPONSE  = array();
-               
+
                   switch ($SERVICE['OPERATION']):
-                      
+
 
                          /**
                            * @example OPERAÇÃO DE PERSISTÊNCIA - SELECT UPDATE
@@ -81,10 +81,10 @@ abstract class DaoCupom extends ControllerHelper{
                            *
                            **/
                                 case 'ONE':
-                                      
-                                        $RESPONSE = ControllerFront::makeObj("App/controllers/", "ControllerCrud")->readData( 
+
+                                        $RESPONSE = ControllerFront::makeObj("App/controllers/", "ControllerCrud")->readData(
                                                                                                 Array ('campos'  => array_keys($ENTITIE['ATTRIBUTES']),
-                                                                                                       'tabelas' => Array (0 =>  'porphut_consolidado.awe_descontos_db AS DESCONTOS  INNER JOIN .awe_promo_codigos AS CODIGO ON (DESCONTOS.DES_ID = CODIGO.VAL_DESC_ID)'),
+                                                                                                       'tabelas' => Array (0 =>  'pdidio_bdportaldidio.awe_descontos_db AS DESCONTOS  INNER JOIN .awe_promo_codigos AS CODIGO ON (DESCONTOS.DES_ID = CODIGO.VAL_DESC_ID)'),
                                                                                                        'where'   =>  array('op_comparacao' => Array(0 => "=",
                                                                                                                                                     1 => "=",
                                                                                                                                                     2 => "="),
@@ -101,7 +101,7 @@ abstract class DaoCupom extends ControllerHelper{
                                                                                                        'BASE'        => null,
                                                                                                        'COMPLEMENTO' => null));
 
-                                       return ($RESPONSE) ?  $RESPONSE : false; 
+                                       return ($RESPONSE) ?  $RESPONSE : false;
 
                                 break;
 
@@ -125,14 +125,14 @@ abstract class DaoCupom extends ControllerHelper{
  *
  */
     public function _PUT(EntitieCupom $CUPOM){
-        
+
           $SERVICE = $CUPOM->getSERVICE();
           $ENTITIE = $CUPOM->getENTITIE();
           $PDO     = ControllerFront::makeObj(PATH_CONTROLLER, "ControllerConexao")->getConnection();
-      
-  
+
+
               switch ($SERVICE['OPERATION']):
-                    
+
                      /**
                        * @example OPERAÇÃO DE PERSISTÊNCIA - INSERT
                        * @return boolean
@@ -166,12 +166,12 @@ abstract class DaoCupom extends ControllerHelper{
  *
  */
     public function _DELETE(EntitieCupom $CUPOM){
-       
+
           $SERVICE = $CUPOM->getSERVICE();
           $ENTITIE = $CUPOM->getENTITIE();
           $PDO     = ControllerFront::makeObj(PATH_CONTROLLER, "ControllerConexao")->getConnectionDefaultController();
-      
-  
+
+
               switch ($SERVICE['OPERATION']):
                      /**
                        * @example OPERAÇÃO DE PERSISTÊNCIA - INSERT
@@ -190,5 +190,5 @@ abstract class DaoCupom extends ControllerHelper{
                           break;
            endswitch;
       }
-      
+
 } // CLASS END

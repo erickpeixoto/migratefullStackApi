@@ -211,7 +211,7 @@ abstract class DaoPedido extends ControllerHelper{
                                            *
                                            **/  
                                            $DATE = ControllerFront::makeObj("App/controllers/", "ControllerCrud")->readData(Array ('campos'  => array(0 => 'NOW() AS NOW'),
-                                                                                                                                                           'tabelas' => Array (0 => 'porphut_consolidado.awe_produtos_db'),
+                                                                                                                                                           'tabelas' => Array (0 => 'pdidio_bdportaldidio.awe_produtos_db'),
                                                                                                                                                            'where'   =>  null,
                                                                                                                                                            'limit'   => null,
                                                                                                                                                            'PDO'     => $PDO,
