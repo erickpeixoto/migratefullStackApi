@@ -1,8 +1,5 @@
-
 		{
-
 			"URL": "http://desenvolvimento.didionow.com.br/",
-
 			"CONNECTION": {
 							"DRIVER"   : "mysql",
                       	    "HOST"     : "cpmy0129.servidorwebfacil.com",
@@ -14,3 +11,4 @@
 			"HASHINGSALT": "1e094b6dbf3867085534b3f4ce9830a23ebe6a2a",
 			"SALTUNIQUE":  "module-security"
 		}
+		
