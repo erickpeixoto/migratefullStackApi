@@ -194,8 +194,7 @@ abstract class DaoCombo extends ControllerHelper{
 
                                         endforeach;
 
-                                        print_r($RESPONSE);
-                                         return ($RESPONSE) ?  $RESPONSE : false;
+                                          return ($RESPONSE) ?  $RESPONSE : false;
 
                                 break;
 
