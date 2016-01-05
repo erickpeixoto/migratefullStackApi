@@ -1,6 +1,6 @@
 <?php
 		header('Access-Control-Allow-Origin: *'); // HABILITA CONTROLE DE ORIGEM DE REQUISICAO
-print_r($_REQUEST);
+print_r($_REQUEST); 
 	/**
 	* Classe Camada de Controle - MVC
 	*
