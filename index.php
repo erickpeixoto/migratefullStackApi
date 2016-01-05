@@ -1,4 +1,5 @@
 <?php
+		header('Access-Control-Allow-Origin: *'); // HABILITA CONTROLE DE ORIGEM DE REQUISICAO
 
 	/**
 	* Classe Camada de Controle - MVC
@@ -9,7 +10,7 @@
 	* @access private
 	* @package Controller - MVC
 	* @example Classe de Controle  - FRONTCONTROLLER
-	* 
+	*
 	*/
 	/**
 	 * Habilitando o escopo de sessão
@@ -28,8 +29,8 @@
 	 **/
 		ControllerFront::getConstantes();
 		$CONFIG = ControllerFront::makeObj("App/controllers/", "ControllerConfig")->setConfig(ControllerFront::open('.connection-app'));
-	
-    
+
+
     /**
 	 * AUTOLOAD CLASS - Instância e carregamento de classes
 	 *
@@ -39,8 +40,8 @@
     	function __autoload($class){
 			include_once("App/controllers/".$class.".php");
 		}
-    
-	    
+
+
     /**
 	 * FRONT CONTROLLER - Controle de tratamento de Serviços Globais
 	 *
@@ -49,9 +50,9 @@
 	 **/
   	    ($_REQUEST) ? ControllerFront::makeObj(PATH_CONTROLLER, "ControllerPost")->_SET(array('POST' => $_REQUEST,'FILES' => $_FILES, 'CONFIG' => $CONFIG)) : null;
 
-  	    
+
     /**
-	 * BACKGROUND CONTROLLER - Controle de tratamento de Serviços para requisições Assíncronas 
+	 * BACKGROUND CONTROLLER - Controle de tratamento de Serviços para requisições Assíncronas
 	 *
 	 * @return void
 	 * @author @erick
