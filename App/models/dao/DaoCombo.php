@@ -189,11 +189,8 @@ abstract class DaoCombo extends ControllerHelper{
                                                                           $getCombo['TAMANHOS'] = $TAMANHOS;
 
                                                                       array_push($RESPONSE, $getCombo);
-
-
-
                                         endforeach;
-                                          return ($RESPONSE) ? $PROMO : false;
+                                        return ($RESPONSE) ? $RESPONSE : false;
 
                                 break;
 

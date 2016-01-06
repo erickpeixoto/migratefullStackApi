@@ -43,21 +43,21 @@ class ControllerCombo extends DaoCombo {
 													                           'REST'       => $REST));
 
 													$COMBO->setENTITIE(array('CMB_ID'		  		    => null,
-																			 'CMB_DESCRICAO'  			=> null,
-																			 'CMB_IMAGEM_ECOMMERCE'  	=> null,
-																			 'CMB_DESCRICAO_ECOMMERCE'  => null,
-																			 'CMB_SLIDE_ECOMMERCE' 		=> null,
-																			 'CMB_REGRAS_ECOMMERCE' 	=> null,
-																			 'CMB_DIAS_ECOMMERCE' 		=> null,
-																			 'CMB_FRACAO_ECOMMERCE' 	=> null,
-					  														 'CMB_PRECO'	 			=> null,
-					  														 'CMB_DIAS'		  			=> null));
+																									 'CMB_DESCRICAO'  			=> null,
+																									 'CMB_IMAGEM_ECOMMERCE'  	=> null,
+																									 'CMB_DESCRICAO_ECOMMERCE'  => null,
+																									 'CMB_SLIDE_ECOMMERCE' 		=> null,
+																									 'CMB_REGRAS_ECOMMERCE' 	=> null,
+																									 'CMB_DIAS_ECOMMERCE' 		=> null,
+																									 'CMB_FRACAO_ECOMMERCE' 	=> null,
+											  													 'CMB_PRECO'	 			=> null,
+											  													 'CMB_DIAS'		  			=> null));
 
 													$COMBO->setENTITIEAUX(array('CPR_CMD_ID'  => null,
-																				'CPR_ITEM'    => null,
-						  														'CPR_PRECO'	  => null,
-						  														'CPR_PRO_ID'  => null));
-																					
+																											'CPR_ITEM'    => null,
+													  													'CPR_PRECO'	  => null,
+													  													'CPR_PRO_ID'  => null));
+
 																				return parent::_GET($COMBO);
 												break;
 
