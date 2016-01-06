@@ -34,7 +34,9 @@ include_once(PATH_CONTROLLER."ControllerHelper.php");
 								break;
 
 								case 'COMBO':
-										echo json_encode(ControllerFront::makeObj(PATH_CONTROLLER, "ControllerCombo")->_set($DATA));
+										echo "ACESSOU O POST\n";
+										print_r(ControllerFront::makeObj(PATH_CONTROLLER, "ControllerCombo")->_SET($DATA));
+										echo json_encode(ControllerFront::makeObj(PATH_CONTROLLER, "ControllerCombo")->_SET($DATA));
 								break;
 
 								case 'PEDIDO':
