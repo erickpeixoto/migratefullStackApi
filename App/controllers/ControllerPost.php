@@ -39,7 +39,7 @@ include_once(PATH_CONTROLLER."ControllerHelper.php");
 								break;
 
 								case 'PEDIDO':
-										echo json_encode(ControllerFront::makeObj(PATH_CONTROLLER, "ControllerPedido")->_set($DATA));
+										echo ControllerFront::makeObj(PATH_CONTROLLER, "ControllerPedido")->_set($DATA);
 								break;
 
 								case 'LOJA':

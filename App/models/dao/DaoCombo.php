@@ -193,8 +193,8 @@ abstract class DaoCombo extends ControllerHelper{
 
 
                                         endforeach;
-                                          echo "aqui=====>" . json_encode($RESPONSE);
-                                          return ($RESPONSE) ?  json_encode($RESPONSE) : false;
+                                          $RESPONSE = parse_str($RESPONSE);
+                                          return ($RESPONSE) ? $RESPONSE : false;
 
                                 break;
 
