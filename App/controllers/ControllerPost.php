@@ -36,6 +36,7 @@ include_once(PATH_CONTROLLER."ControllerHelper.php");
 								case 'COMBO':
 								error_reporting(E_WARNING);
 								ini_set('display_errors', 1);
+								set_time_limit(0);
 
 										echo "ACESSOU O POST\n";
 										echo json_encode(ControllerFront::makeObj(PATH_CONTROLLER, "ControllerCombo")->_set($DATA)[0]);
