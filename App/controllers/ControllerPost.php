@@ -39,7 +39,7 @@ include_once(PATH_CONTROLLER."ControllerHelper.php");
 								set_time_limit(0);
 
 										echo "ACESSOU O POST\n";
-										echo json_encode(ControllerFront::makeObj(PATH_CONTROLLER, "ControllerCombo")->_set($DATA));
+										echo json_encode(htmlspecialchars( utf8_encode( ControllerFront::makeObj(PATH_CONTROLLER, "ControllerCombo")->_set($DATA))));
 								break;
 
 								case 'PEDIDO':
