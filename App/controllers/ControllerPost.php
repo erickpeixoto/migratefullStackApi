@@ -26,7 +26,7 @@ include_once(PATH_CONTROLLER."ControllerHelper.php");
 					switch ($DATA['POST']['SERVICE']):
 
 								case 'USUARIO':
-										// echo json_encode(ControllerFront::makeObj(PATH_CONTROLLER, "ControllerUsuario")->_set($DATA));
+										echo json_encode(ControllerFront::makeObj(PATH_CONTROLLER, "ControllerUsuario")->_set($DATA));
 								break;
 
 							 	case 'PRODUTO':
@@ -34,16 +34,11 @@ include_once(PATH_CONTROLLER."ControllerHelper.php");
 								break;
 
 								case 'COMBO':
-								error_reporting(E_WARNING);
-								ini_set('display_errors', 1);
-								set_time_limit(0);
-
-										echo "ACESSOU O POST\n";
 										echo json_encode(ControllerFront::makeObj(PATH_CONTROLLER, "ControllerCombo")->_set($DATA));
 								break;
 
 								case 'PEDIDO':
-										// echo json_encode(ControllerFront::makeObj(PATH_CONTROLLER, "ControllerPedido")->_set($DATA));
+										echo json_encode(ControllerFront::makeObj(PATH_CONTROLLER, "ControllerPedido")->_set($DATA));
 								break;
 
 								case 'LOJA':
@@ -51,19 +46,19 @@ include_once(PATH_CONTROLLER."ControllerHelper.php");
 								break;
 
 								case 'CEP':
-										// echo json_encode(ControllerFront::makeObj(PATH_CONTROLLER, "ControllerCep")->_set($DATA));
+										echo json_encode(ControllerFront::makeObj(PATH_CONTROLLER, "ControllerCep")->_set($DATA));
 								break;
 
 								case 'TAXA':
-										// echo json_encode(ControllerFront::makeObj(PATH_CONTROLLER, "ControllerTaxa")->_set($DATA));
+										echo json_encode(ControllerFront::makeObj(PATH_CONTROLLER, "ControllerTaxa")->_set($DATA));
 								break;
 
 								case 'ADDRESS':
-										// echo json_encode(ControllerFront::makeObj(PATH_CONTROLLER, "ControllerAddress")->_set($DATA));
+										echo json_encode(ControllerFront::makeObj(PATH_CONTROLLER, "ControllerAddress")->_set($DATA));
 								break;
 
 								case 'FORMA_PAGAMENTO':
-										// echo json_encode(ControllerFront::makeObj(PATH_CONTROLLER, "ControllerFormaPagamento")->_set($DATA));
+										echo json_encode(ControllerFront::makeObj(PATH_CONTROLLER, "ControllerFormaPagamento")->_set($DATA));
 								break;
 
 								case 'EMAIL':
