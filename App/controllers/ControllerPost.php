@@ -34,7 +34,7 @@ include_once(PATH_CONTROLLER."ControllerHelper.php");
 								break;
 
 								case 'COMBO':
-								error_reporting(E_WARNING,E_PARSE);
+								error_reporting(E_WARNING);
 								ini_set('display_errors', 1);
 
 										echo "ACESSOU O POST\n";
