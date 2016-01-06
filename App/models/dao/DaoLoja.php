@@ -43,15 +43,15 @@ abstract class DaoLoja extends ControllerHelper{
  *
  */
   public final function _GET(EntitieLoja $LOJA){
-   
+
           $SERVICE = $LOJA->getSERVICE();
           $ENTITIE = $LOJA->getENTITIE();
           $PDO     = ControllerFront::makeObj(PATH_CONTROLLER, "ControllerConexao")->getConnection();
           $RETURN  = Array();
-      
-  
+
+
               switch ($SERVICE['OPERATION']):
-                    
+
                      /**
                        * @example OPERAÇÃO DE PERSISTÊNCIA - SELECT ALL
                        * @return boolean
@@ -59,8 +59,8 @@ abstract class DaoLoja extends ControllerHelper{
                        *
                        **/
                              case 'ALL':
-                                
-                                         
+
+
                                    $RESPONSE = ControllerFront::makeObj("App/controllers/", "ControllerCrud")->readData(Array ('campos'  => array_keys($ENTITIE['ATTRIBUTES']),
                                                                                                                                'tabelas' => array(0 => $ENTITIE['NAME']),
                                                                                                                                'where'   => array('op_comparacao' => Array(0 => "!=",
@@ -79,7 +79,8 @@ abstract class DaoLoja extends ControllerHelper{
 
                                         foreach ($RESPONSE as $key => $getLoja) {
 
-
+                                              $getLoja['REST_NOME'] = str_replace('(', ' ', $getLoja['REST_NOME']);
+                                              $getLoja['REST_NOME'] = str_replace(')', ' ', $getLoja['REST_NOME']);
                                               $DATA = ControllerFront::makeObj("App/controllers/", "ControllerCrud")->readData(Array ('campos'  => array(0 => 'TIMEDIFF(now(), TBL.ISO_DATAHORA) AS DIFF'),
                                                                                                                                                                                             'tabelas' => array(0 => $getLoja['REST_DATABASE'].'.'.$ENTITIE['AUX'][1].' AS TBL'),
                                                                                                                                                                                             'where'   => null,
@@ -93,7 +94,7 @@ abstract class DaoLoja extends ControllerHelper{
                                                                                                                                                                                               'limit'   => null,
                                                                                                                                                                                               'PDO'     => $PDO,
                                                                                                                                                                                               'COMPLEMENTO' => null));
-                                                          
+
 
                                                                                                 $getLoja['STATE'] = array(
                                                                                                                           'SOCKET'    => ((int) parent::getMinDate($DATA) < 5) ? true : false,
@@ -101,15 +102,15 @@ abstract class DaoLoja extends ControllerHelper{
                                                                                                                           'DAYMOV'    => $MOVIMENTO[0]['MVD_DATA_INI']
                                                                                                                           );
 
-                                                                                                array_push($RETURN, $getLoja); 
-                                                                                                
+                                                                                                array_push($RETURN, $getLoja);
+
 
                                           }
 
-                                      
+
 
                                                 return $RETURN;
-                                  } 
+                                  }
 
                               break;
 
@@ -120,7 +121,7 @@ abstract class DaoLoja extends ControllerHelper{
                        *
                        **/
                              case 'CHECK':
-                                
+
                                     $RETURN = ControllerFront::makeObj("App/controllers/", "ControllerCrud")->readData(Array ('campos'  => array(0 => 'TIMEDIFF(now(), TBL.ISO_DATAHORA) AS DIFF'),
                                                                                                                               'tabelas' => array(0 => $SERVICE['BASE'].'.'.$ENTITIE['AUX'][1].' AS TBL'),
                                                                                                                               'where'   => null,
@@ -160,7 +161,7 @@ abstract class DaoLoja extends ControllerHelper{
  *
  */
       public final function _PUT(EntitieCep $CEP){
-                  
+
                     // #CODE
       }
 
@@ -179,13 +180,13 @@ abstract class DaoLoja extends ControllerHelper{
  *
  */
     public final function _DELETE(EntitieCep $CEP){
-             
+
                    // #CODE
       }
 
 
 
 
-      
-      
+
+
 } // CLASS END
