@@ -79,11 +79,7 @@ abstract class DaoLoja extends ControllerHelper{
 
                                         foreach ($RESPONSE as $key => $getLoja) {
 
-                                              $getLoja['REST_NOME'] = str_replace('(', ' ', $getLoja['REST_NOME']);
-                                              $getLoja['REST_NOME'] = str_replace(')', ' ', $getLoja['REST_NOME']);
-                                              $getLoja['REST_ECOMMERCE_NOME'] = str_replace('(', ' ', $getLoja['REST_ECOMMERCE_NOME']);
-                                              $getLoja['REST_ECOMMERCE_NOME'] = str_replace(')', ' ', $getLoja['REST_ECOMMERCE_NOME']);
-                                              $DATA = ControllerFront::makeObj("App/controllers/", "ControllerCrud")->readData(Array ('campos'  => array(0 => 'TIMEDIFF(now(), TBL.ISO_DATAHORA) AS DIFF'),
+                                                  $DATA = ControllerFront::makeObj("App/controllers/", "ControllerCrud")->readData(Array ('campos'  => array(0 => 'TIMEDIFF(now(), TBL.ISO_DATAHORA) AS DIFF'),
                                                                                                                                                                                             'tabelas' => array(0 => $getLoja['REST_DATABASE'].'.'.$ENTITIE['AUX'][1].' AS TBL'),
                                                                                                                                                                                             'where'   => null,
                                                                                                                                                                                             'limit'   => null,
