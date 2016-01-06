@@ -34,12 +34,11 @@ include_once(PATH_CONTROLLER."ControllerHelper.php");
 								break;
 
 								case 'COMBO':
-
-										echo ControllerFront::makeObj(PATH_CONTROLLER, "ControllerCupom")->_set($DATA);
+										echo json_encode(ControllerFront::makeObj(PATH_CONTROLLER, "ControllerCombo")->_set($DATA));
 								break;
 
 								case 'PEDIDO':
-										echo ControllerFront::makeObj(PATH_CONTROLLER, "ControllerPedido")->_set($DATA);
+										echo json_encode(ControllerFront::makeObj(PATH_CONTROLLER, "ControllerPedido")->_set($DATA));
 								break;
 
 								case 'LOJA':
