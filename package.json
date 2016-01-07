@@ -2,7 +2,7 @@
   "name": "accon",
   "version": "1.0.0",
   "description": "Api Restful - Pedido Online Dídio Pizzas",
-  "main": "server.js",
+  "main": "serverDidio.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
