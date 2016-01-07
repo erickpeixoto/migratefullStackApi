@@ -1,0 +1,22 @@
+{
+  "name": "accon",
+  "version": "1.0.0",
+  "description": "Api Restful - Pedido Online Dídio Pizzas",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "__@erick",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.14.1",
+    "express": "^4.13.3",
+    "mongoose": "^4.2.2",
+    "validator": "^4.2.0",
+    "nodemailer": "~1.4.0",
+    "nodemailer-smtp-transport":"~1.0.3"
+  },
+  "devDependencies": {
+    "bcrypt-nodejs": "0.0.3"
+  }
+}
