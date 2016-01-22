@@ -5,8 +5,8 @@
 * @private  CONFIGURATION SERVER SOCKET.IO
 */
 	var
-		   app 			  = require('./serverConfig')
-	   , server  		= require('http').createServer(app)
+		   appIO 			  = require('express')
+	   , server  		= require('http').createServer(appIO)
      , io         = require('socket.io').listen(server);
 
       server.listen(5886);
