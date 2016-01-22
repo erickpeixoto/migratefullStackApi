@@ -12,7 +12,7 @@
 
      server.listen(3333);
      io.sockets.on('connection', function(socket){
-            socket.on('send message', function(data){
+            socket.on('orderStatus', function(data){
               io.sockets.emit('new message', data);
               //   socket.broadcast.emit('new message', data);
             })
