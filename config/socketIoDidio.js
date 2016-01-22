@@ -11,6 +11,11 @@
      , io         = require('socket.io').listen(server);
 
      server.listen(3333);
+
+		 io.configure(function () { 
+			   io.set("transports", ["xhr-polling"]);
+			   io.set("polling duration", 10);
+			});
      io.sockets.on('connection', function(socket){
             socket.on('orderStatus', function(data){
               io.sockets.emit('new message', data);
