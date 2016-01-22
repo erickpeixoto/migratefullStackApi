@@ -1,9 +1,10 @@
 /**
-*
-* @Router Config Server
-* @author Erick Eduardo - __@erick
-* @private  CONFIGURATION SERVER
-*/
+	*
+	* @Router Config Server
+	* @author Erick Eduardo - __@erick
+	* @private  CONFIGURATION SERVER
+	*/
+
 	var
 		   express 		= require('express')
 		 , app 	   		= module.exports = express()
@@ -18,13 +19,9 @@
 				res.header('Access-Control-Allow-Credentials','true');
 				next();
 		 }
-
 		   app.listen(port);
 		   app.use(allowCors);
 		   app.use(bodyParser.json());
 		   app.use(bodyParser.urlencoded({
-
 				extended: true
 			}));
-
-				console.log('conectado a porta ' + port);

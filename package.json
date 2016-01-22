@@ -14,7 +14,8 @@
     "mongoose": "^4.2.2",
     "validator": "^4.2.0",
     "nodemailer": "~1.4.0",
-    "nodemailer-smtp-transport":"~1.0.3"
+    "nodemailer-smtp-transport":"~1.0.3",
+    "socket.io": "1.4.4"
   },
   "devDependencies": {
     "bcrypt-nodejs": "0.0.3"

@@ -6,7 +6,8 @@
 * @private - GET CEP
 */
 	var
-		  app 				 = require('./config/serverConfig')
+			app 				 = require('./config/serverConfig')
+		, io 			  	 = require('./config/serverIo')
 		, express 		 = require('express')
 		, validator  	 = require('validator')
 		, router 			 = express.Router()
