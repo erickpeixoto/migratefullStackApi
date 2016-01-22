@@ -9,7 +9,7 @@
 	   , server  		= require('http').createServer(app)
      , io         = require('socket.io').listen(server);
 
-      server.listen(5889);
+      server.listen(5886);
 	 	 	io.sockets.on('connection', function(socket){
 	            socket.on('send message', function(data){
 	              io.sockets.emit('new message', data);
