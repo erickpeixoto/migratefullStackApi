@@ -1,34 +1,33 @@
 
-/** 
-* 
-* @Router Model Cep 
+/**
+*
+* @Router Model Cep
 * @author Erick Eduardo - __@erick
-* @private 
-*/ 
+* @private
+*/
 
 	require('../config/dbConfig');
 
-	var 
+	var
 		  mongoose = require('mongoose')
 		, db   	   = mongoose.connection;
 
 		  db.once('open', function(){
 
-	  			  /** 
-					* @Schema Cep 
+	  		  /**
+					* @Schema Cep
 					* @author Erick Eduardo - __@erick
-					*/ 
+					*/
 						var CepSchema = mongoose.Schema({
-										
-										  cep: 		    String,
+
+										  cep: 		      String,
 										  logradouro: 	String,
-										  bairro: 		String,
+										  bairro: 	  	String,
 										  localidade: 	String,
-										  uf: 			String,
-									      complemento:  String,
-									      tipo_logradouro: String
+										  uf: 		   	  String,
+									    complemento:  String,
+									    tipo_logradouro: String
 									})
 
 							exports.Cep = mongoose.model('Cep', CepSchema);
-})	
-
+})

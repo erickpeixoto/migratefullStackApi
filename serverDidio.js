@@ -9,13 +9,15 @@
 		, express 		 = require('express')
 		, validator  	 = require('validator')
 		, router 			 = express.Router()
-		, routesController 	 = require('./controller/routeController')
+		, routeController 	 = require('./controller/routeController')
 		, securityController = require('./controller/securityController');
 
 
 	app.use('/', router);
 
 	router.route('/cep/:id')
-		  .get(securityController,routesController.getCep);
+		  .get(securityController,routeController.getCep);
 	router.route('/send/')
-		  .post(securityController,routesController.postMailer);
+		  .post(securityController,routeController.postMailer);
+router.route('/io/order/')
+			.post(securityController,routeController.postNotification)

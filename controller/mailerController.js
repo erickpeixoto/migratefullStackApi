@@ -7,9 +7,9 @@
 */
 
 	var
-	     nodemailer     = require("nodemailer")
+	       nodemailer     = require("nodemailer")
   	   , smtpTransport  = require('nodemailer-smtp-transport');
-    	 process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
+      	 process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
 
 
 
